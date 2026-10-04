@@ -130,3 +130,27 @@ Linux Sentinel successfully displayed the actual CPU model information at runtim
 - Successful SystemMonitor module compilation
 - Successful integrated application compilation
 - Successful CPU information runtime output
+
+## 4.12 Memory Monitoring Implementation
+
+The SystemMonitor module was extended to collect memory information from the Linux environment.
+
+The `SystemMonitor::getMemoryInfo()` function reads the Linux `/proc/meminfo` virtual filesystem and retrieves the total and available memory values.
+
+### Implementation
+
+- Added `getMemoryInfo()` to `SystemMonitor`
+- Implemented memory information retrieval using `/proc/meminfo`
+- Integrated memory monitoring with `src/main.cpp`
+- Compiled the updated application successfully
+- Executed the application successfully on Ubuntu Linux
+
+### Result
+
+Linux Sentinel successfully displayed the total and available memory information at runtime.
+
+### Evidence
+
+- Successful SystemMonitor compilation
+- Successful integrated application compilation
+- Successful memory information runtime output

@@ -33,3 +33,34 @@ std::string SystemMonitor::getCpuInfo()
 
     return cpuInfo.str();
 }
+
+std::string SystemMonitor::getMemoryInfo()
+{
+    std::ifstream memoryFile("/proc/meminfo");
+
+    if (!memoryFile.is_open())
+    {
+        return "Unable to read memory information.";
+    }
+
+    std::string line;
+    std::ostringstream memoryInfo;
+
+    while (std::getline(memoryFile, line))
+    {
+        if (line.find("MemTotal:") == 0 ||
+            line.find("MemAvailable:") == 0)
+        {
+            memoryInfo << line << '\n';
+        }
+    }
+
+    memoryFile.close();
+
+    if (memoryInfo.str().empty())
+    {
+        return "Memory information not available.";
+    }
+
+    return memoryInfo.str();
+}
