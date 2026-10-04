@@ -22,3 +22,5 @@ core.*
 # Editor files
 .vscode/
 .idea/
+
+linux_sentinel
