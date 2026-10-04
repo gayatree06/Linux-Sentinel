@@ -104,3 +104,29 @@ The initial working C++ prototype was successfully created and verified.
 - Successful C++ compilation
 - Successful Linux Sentinel prototype execution
 - Git commit: `447fdeb – Add initial C++ prototype`
+
+## 4.11 CPU Monitoring Implementation
+
+The SystemMonitor module was integrated with the Linux Sentinel main application.
+
+The `SystemMonitor::getCpuInfo()` function reads CPU information from the Linux `/proc/cpuinfo` virtual filesystem and returns the CPU model information to the main application.
+
+### Implementation
+
+- Created `include/SystemMonitor.h`
+- Created `src/SystemMonitor.cpp`
+- Implemented the `SystemMonitor` class
+- Added CPU information retrieval through `/proc/cpuinfo`
+- Integrated `SystemMonitor` with `src/main.cpp`
+- Compiled the integrated application successfully
+- Executed the application successfully on Ubuntu Linux
+
+### Result
+
+Linux Sentinel successfully displayed the actual CPU model information at runtime.
+
+### Evidence
+
+- Successful SystemMonitor module compilation
+- Successful integrated application compilation
+- Successful CPU information runtime output
