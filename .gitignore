@@ -1,0 +1,24 @@
+# Build output
+build/
+bin/
+obj/
+
+# Compiled files
+*.o
+*.out
+*.ko
+
+# Debug files
+core
+core.*
+
+# Temporary files
+*.tmp
+*.swp
+
+# Logs
+*.log
+
+# Editor files
+.vscode/
+.idea/
