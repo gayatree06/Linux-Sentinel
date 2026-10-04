@@ -179,3 +179,50 @@ Linux Sentinel successfully displayed total, used, and available storage informa
 - Successful SystemMonitor compilation
 - Successful integrated application compilation
 - Successful storage information runtime output
+
+## 4.14 Process Monitoring Implementation
+
+Process monitoring was implemented as the next system-monitoring capability of Linux Sentinel.
+
+The `SystemMonitor` class was extended with a `getProcessInfo()` function. The implementation uses the Linux `/proc` filesystem to identify numeric process directories representing active process IDs (PIDs).
+
+The application counts the identified process directories and displays the current number of running processes.
+
+### Implementation Details
+
+- Added `getProcessInfo()` to `SystemMonitor`
+- Used the Linux `/proc` filesystem
+- Identified numeric process directories as process IDs
+- Counted the currently running processes
+- Integrated process information into the main Linux Sentinel application
+- Successfully compiled and executed the application
+
+### Verification
+
+The application successfully displayed:
+
+`Running Processes: 24`
+
+The process count represents the running processes detected in the current Linux environment and may vary during different executions.
+
+### Git Version Control
+
+The Process Monitoring implementation was committed to Git:
+
+`8839517 – Implement process monitoring`
+
+### Evidence
+
+A screenshot of the successful Linux Sentinel execution showing CPU, memory, storage, and process information was captured as implementation evidence.
+
+### Training Concepts Demonstrated
+
+- Linux process concepts
+- Linux `/proc` filesystem
+- C++17 filesystem functionality
+- System monitoring
+- C++ string and iteration operations
+
+### Next Planned Activity
+
+The next activity is to continue implementing the Linux system programming and device-management components of Linux Sentinel.
