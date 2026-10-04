@@ -83,3 +83,24 @@ The next activity is to develop the initial C++ application skeleton for Linux S
 ## 4.9 Stage 4 Progress Principle
 
 Development will follow a progressive implementation approach. Each major implementation milestone will be tested, documented, supported by appropriate progress evidence, and committed to Git before proceeding to the next major activity.
+## 4.10 Initial C++ Prototype
+
+The initial C++ prototype of Linux Sentinel was implemented and successfully executed on the Ubuntu Linux development environment.
+
+The prototype includes the main application entry point and displays the project identity and startup confirmation message.
+
+The source file is:
+
+`src/main.cpp`
+
+The application was compiled using G++ with C++17, warning checks, and debug information. The resulting executable was successfully executed on Linux.
+
+### Result
+
+The initial working C++ prototype was successfully created and verified.
+
+### Evidence
+
+- Successful C++ compilation
+- Successful Linux Sentinel prototype execution
+- Git commit: `447fdeb – Add initial C++ prototype`
