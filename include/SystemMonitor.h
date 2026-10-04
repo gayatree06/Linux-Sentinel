@@ -9,6 +9,7 @@ public:
     std::string getCpuInfo();
     std::string getMemoryInfo();
     std::string getStorageInfo();
-};
+    std::string getProcessInfo();
+}; 
 
 #endif

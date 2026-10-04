@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <sstream>
+#include <filesystem>
+#include <cctype>
 #include <sys/statvfs.h>
 
 std::string SystemMonitor::getCpuInfo()
@@ -102,4 +104,39 @@ std::string SystemMonitor::getStorageInfo()
     storageInfo << "Available Storage: " << availableGB << " GB\n";
 
     return storageInfo.str();
+}
+
+
+std::string SystemMonitor::getProcessInfo()
+{
+    int processCount = 0;
+
+    for (const auto& entry : std::filesystem::directory_iterator("/proc"))
+    {
+        std::string name = entry.path().filename().string();
+
+        if (!name.empty())
+        {
+            bool isProcessDirectory = true;
+
+            for (char character : name)
+            {
+                if (!std::isdigit(static_cast<unsigned char>(character)))
+                {
+                    isProcessDirectory = false;
+                    break;
+                }
+            }
+
+            if (isProcessDirectory)
+            {
+                processCount++;
+            }
+        }
+    }
+
+    std::ostringstream processInfo;
+    processInfo << "Running Processes: " << processCount << '\n';
+
+    return processInfo.str();
 }
