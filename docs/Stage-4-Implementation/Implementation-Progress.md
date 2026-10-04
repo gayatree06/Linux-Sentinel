@@ -154,3 +154,28 @@ Linux Sentinel successfully displayed the total and available memory information
 - Successful SystemMonitor compilation
 - Successful integrated application compilation
 - Successful memory information runtime output
+
+## 4.13 Storage Monitoring Implementation
+
+The SystemMonitor module was extended to collect storage information from the Linux filesystem.
+
+The `SystemMonitor::getStorageInfo()` function uses the Linux `statvfs()` filesystem interface to calculate total, used, and available storage space for the root filesystem.
+
+### Implementation
+
+- Added `getStorageInfo()` to `SystemMonitor`
+- Added the Linux `statvfs()` interface
+- Implemented total, used, and available storage calculation
+- Integrated storage monitoring with `src/main.cpp`
+- Compiled the updated application successfully
+- Executed the application successfully on Ubuntu Linux
+
+### Result
+
+Linux Sentinel successfully displayed total, used, and available storage information at runtime.
+
+### Evidence
+
+- Successful SystemMonitor compilation
+- Successful integrated application compilation
+- Successful storage information runtime output

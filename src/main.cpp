@@ -17,5 +17,8 @@ int main()
     std::cout << systemMonitor.getCpuInfo();
     std::cout << "\nMemory Information:\n";
     std::cout << systemMonitor.getMemoryInfo();
+    std::cout << "\nStorage Information:\n";
+    std::cout << systemMonitor.getStorageInfo();
+    
     return 0;
 }

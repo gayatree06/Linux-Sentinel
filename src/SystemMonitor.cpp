@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <sys/statvfs.h>
 
 std::string SystemMonitor::getCpuInfo()
 {
@@ -63,4 +64,42 @@ std::string SystemMonitor::getMemoryInfo()
     }
 
     return memoryInfo.str();
+}
+
+std::string SystemMonitor::getStorageInfo()
+{
+    struct statvfs fileSystemInfo;
+
+    if (statvfs("/", &fileSystemInfo) != 0)
+    {
+        return "Unable to read storage information.";
+    }
+
+    const unsigned long long blockSize = fileSystemInfo.f_frsize;
+
+    const unsigned long long totalSpace =
+        fileSystemInfo.f_blocks * blockSize;
+
+    const unsigned long long availableSpace =
+        fileSystemInfo.f_bavail * blockSize;
+
+    const unsigned long long usedSpace =
+        totalSpace - (fileSystemInfo.f_bfree * blockSize);
+
+    const unsigned long long totalGB =
+        totalSpace / (1024ULL * 1024ULL * 1024ULL);
+
+    const unsigned long long usedGB =
+        usedSpace / (1024ULL * 1024ULL * 1024ULL);
+
+    const unsigned long long availableGB =
+        availableSpace / (1024ULL * 1024ULL * 1024ULL);
+
+    std::ostringstream storageInfo;
+
+    storageInfo << "Total Storage: " << totalGB << " GB\n";
+    storageInfo << "Used Storage: " << usedGB << " GB\n";
+    storageInfo << "Available Storage: " << availableGB << " GB\n";
+
+    return storageInfo.str();
 }

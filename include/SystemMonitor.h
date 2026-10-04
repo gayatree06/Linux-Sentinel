@@ -8,6 +8,7 @@ class SystemMonitor
 public:
     std::string getCpuInfo();
     std::string getMemoryInfo();
+    std::string getStorageInfo();
 };
 
 #endif
