@@ -28,3 +28,11 @@ linux_sentinel
 # Test executables
 network_test
 network_client_test
+
+driver/*.o
+driver/*.ko
+driver/*.cmd
+driver/*.mod
+driver/*.mod.c
+driver/Module.symvers
+driver/modules.order
