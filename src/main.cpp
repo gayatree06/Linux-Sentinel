@@ -1,5 +1,5 @@
 #include "SystemMonitor.h"
-
+#include "LinuxSystem.h"
 #include <iostream>
 
 int main()
@@ -21,5 +21,11 @@ int main()
     std::cout << systemMonitor.getStorageInfo();
     std::cout << "\nProcess Information:\n";
     std::cout << systemMonitor.getProcessInfo();
+    
+    LinuxSystem linuxSystem;
+
+    std::cout << "\nLinux System Information:\n";
+    std::cout << linuxSystem.readSystemFile("/proc/uptime");
+
     return 0;
 }
