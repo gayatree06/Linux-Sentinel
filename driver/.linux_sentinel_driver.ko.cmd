@@ -1,0 +1,1 @@
+savedcmd_linux_sentinel_driver.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /home/gayatree/WSL2-Linux-Kernel/scripts/module.lds -o linux_sentinel_driver.ko linux_sentinel_driver.o linux_sentinel_driver.mod.o .module-common.o
