@@ -42,8 +42,10 @@ void displayDeviceStatus(DeviceManager& deviceManager,
     }
     else
     {
-        std::cout << "Linux Sentinel device is currently unavailable.\n";
-
+        std::cout << "Linux Sentinel Character Driver:\n";
+        std::cout << "Status: Not available in current WSL2 environment.\n";
+        std::cout << "Reason: Kernel module compatibility limitation.\n";
+        std::cout << "Device Manager: Graceful fallback active.\n";   
         logManager.log(
             "Device status requested but driver is unavailable.");
     }
