@@ -269,3 +269,56 @@ A screenshot of the successful Linux Sentinel execution showing the Linux System
 ### Next Planned Activity
 
 The next activity is to implement the networking component using TCP/IP communication, followed by the Linux character device driver and user-space device communication.
+
+## 4.16 TCP/IP Networking Implementation
+
+TCP/IP networking functionality was implemented as part of Linux Sentinel.
+
+A dedicated `NetworkManager` class was created to provide TCP server and client functionality using Linux socket APIs.
+
+### Implementation Details
+
+- Created `NetworkManager` class
+- Implemented TCP server functionality
+- Created a TCP socket using `socket()`
+- Configured the server using `bind()`
+- Enabled connection listening using `listen()`
+- Accepted client connections using `accept()`
+- Implemented TCP client connection using `connect()`
+- Implemented server-to-client communication using `send()`
+- Implemented client response reception using `recv()`
+- Added basic network error handling
+- Created separate TCP server and client test programs
+
+### Verification
+
+The TCP server was successfully started and a client successfully connected to it.
+
+The server returned the following response to the client:
+
+`DEVICE_OK`
+
+The client successfully displayed the server response, confirming TCP client-server communication.
+
+### Training Concepts Demonstrated
+
+- TCP/IP networking
+- Client-server architecture
+- Linux socket programming
+- TCP connection establishment
+- Data transmission and reception
+- Network error handling
+
+### Git Version Control
+
+The TCP networking implementation was committed to Git:
+
+`8875283 – Implement TCP networking`
+
+### Evidence
+
+A screenshot showing the successful TCP client connection and `DEVICE_OK` server response was captured as Stage 4 implementation evidence.
+
+### Next Planned Activity
+
+The next major activity is implementation of the Linux character device driver and communication between the user-space C++ application and the Linux device driver.
