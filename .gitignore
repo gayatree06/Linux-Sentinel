@@ -24,3 +24,7 @@ core.*
 .idea/
 
 linux_sentinel
+
+# Test executables
+network_test
+network_client_test
