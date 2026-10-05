@@ -226,3 +226,46 @@ A screenshot of the successful Linux Sentinel execution showing CPU, memory, sto
 ### Next Planned Activity
 
 The next activity is to continue implementing the Linux system programming and device-management components of Linux Sentinel.
+
+## 4.15 Linux System Programming Implementation
+
+Linux system programming functionality was implemented as part of the Linux Sentinel application.
+
+A dedicated `LinuxSystem` class was created to demonstrate interaction between the C++ user-space application and Linux system interfaces.
+
+The implementation uses Linux system calls to open, read, and close a system file. The `/proc/uptime` interface was selected as the initial system-information source.
+
+### Implementation Details
+
+- Created `LinuxSystem` class
+- Implemented `readSystemFile()` function
+- Used the Linux `open()` system call
+- Used the Linux `read()` system call
+- Used the Linux `close()` system call
+- Used file descriptors for system-file access
+- Integrated the module into the main Linux Sentinel application
+- Successfully compiled and executed the application
+
+### Verification
+
+Linux Sentinel successfully read `/proc/uptime` and displayed the system uptime information during execution.
+
+### Training Concepts Demonstrated
+
+- Linux System Programming
+- System calls
+- File descriptors
+- User-space interaction with Linux system interfaces
+- Linux `/proc` filesystem
+
+### Git Version Control
+
+The Linux System Programming implementation was committed to Git as a separate development milestone.
+
+### Evidence
+
+A screenshot of the successful Linux Sentinel execution showing the Linux System Information output was captured as implementation evidence.
+
+### Next Planned Activity
+
+The next activity is to implement the networking component using TCP/IP communication, followed by the Linux character device driver and user-space device communication.
