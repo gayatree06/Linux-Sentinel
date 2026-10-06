@@ -53,20 +53,13 @@ The Linux kernel provides the underlying operating system and device management 
 
 The major data flow is:
 
-```text
-User
-  |
-  v
-C++ CLI Application
-  |
-  +------------------+------------------+
-  |                  |                  |
-  v                  v                  v
-System Monitor   Device Manager    Network Manager
-  |                  |                  |
-  v                  v                  v
-Linux System     Character Device    TCP/IP Socket
-Interfaces          Driver              |
-  |                  |                  |
-  v                  v                  v
-/proc and FS      Linux Kernel      TCP Server/Client
+<img width="1536" height="1024" alt="Linux Sentinel System Architecture" src="https://github.com/user-attachments/assets/75b9e150-4581-4ac6-8d93-133c0643c71a" />
+The data flow is organised into four major application functions:
+
+- **SystemMonitor:** Reads CPU, memory, storage and process information through Linux system interfaces.
+- **DeviceManager:** Provides the user-space interface for the Linux character-device functionality.
+- **NetworkManager:** Uses TCP sockets for client-server communication.
+- **LogManager:** Records timestamped application activities in `linux_sentinel.log`.
+
+The character-device driver operates on the Linux kernel side, while the C++ application operates in user space.
+
