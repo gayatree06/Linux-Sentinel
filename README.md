@@ -29,31 +29,8 @@ The application collects system information, provides device management function
 
 ## 3. System Architecture
 
-```text
-User
-  |
-  v
-C++ Command-Line Application
-  |
-  +--------------------+
-  |                    |
-  v                    v
-System Monitoring    Device Manager
-  |                    |
-  v                    v
-Linux System APIs    Character Device
-  |                    |
-  |                    v
-  |                Linux Kernel
-  |                    |
-  |                    v
-  |                Virtual Device
-  |
-  v
-/proc and Linux Filesystem
+![Uploading Linux Sentinel System Architecture.png…]()
 
-C++ Application
-       |
        v
 Network Manager
        |
